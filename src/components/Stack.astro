@@ -14,7 +14,44 @@ import { stack } from '../data/site';
           <span class="text-[13px] font-semibold tracking-[0.08em] text-accent uppercase">{g.grupo}</span>
           <ul class="flex flex-wrap gap-2.5">
             {g.itens.map((item) => (
-              <li class="rounded-full border border-line-strong px-[18px] py-2.5 font-mono text-sm">{item}</li>
+              <li class="inline-flex items-center gap-2 rounded-full border border-line-strong px-[18px] py-2.5 font-mono text-sm">
+                {item.icone ? (
+                  <img
+                    src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${item.icone}`}
+                    alt=""
+                    aria-hidden="true"
+                    width="18"
+                    height="18"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                ) : (
+                  <svg
+                    class="h-[18px] w-[18px] text-accent"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    {item.nome === "API REST" ? (
+                      <>
+                        <path d="M8 8 4 12l4 4" />
+                        <path d="m16 8 4 4-4 4" />
+                        <path d="m14 5-4 14" />
+                      </>
+                    ) : (
+                      <>
+                        <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z" />
+                        <path d="m9 12 2 2 4-4" />
+                      </>
+                    )}
+                  </svg>
+                )}
+                <span>{item.nome}</span>
+              </li>
             ))}
           </ul>
         </div>
