@@ -6,7 +6,7 @@ export const site = {
   email: "fabio.enzoo00@gmail.com",
   descricao:
     "Portfólio de Fábio Enzo Araujo Barbosa, desenvolvedor full stack. Projetos, stack e contato.",
-  curriculo: "/public/Curriculo_Fabio_Enzo.pdf",
+  curriculo: "/Curriculo_Fabio_Enzo.pdf",
   disponivel: true,
   social: [
     { rotulo: "GitHub", url: "https://github.com/FabioEnzo1" },

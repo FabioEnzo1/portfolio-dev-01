@@ -13,7 +13,7 @@ import { site, sobre } from '../data/site';
   <div class="flex min-w-0 flex-[1_1_440px] flex-col gap-5">
     <h2 class="font-display text-[40px] font-semibold tracking-tight">Sobre mim</h2>
     {sobre.map((p) => <p class="text-muted">{p}</p>)}
-    <a href={site.curriculo} class="inline-flex self-start rounded-full border-[1.5px] border-line-strong px-6 py-3.5 text-[15px] font-semibold hover:border-accent">
+    <a href={site.curriculo} download class="inline-flex self-start rounded-full border-[1.5px] border-line-strong px-6 py-3.5 text-[15px] font-semibold hover:border-accent">
       Baixar currículo (PDF)
     </a>
   </div>
