@@ -1,0 +1,24 @@
+---
+import { stack } from '../data/site';
+---
+
+<section id="stack" class="border-y border-line bg-band">
+  <div class="mx-auto flex max-w-[1180px] flex-wrap gap-12 px-8 py-24">
+    <div class="flex min-w-0 flex-[1_1_320px] flex-col gap-4">
+      <h2 class="font-display text-[40px] font-semibold tracking-tight">Stack</h2>
+      <p class="text-muted">As ferramentas que uso para levar uma ideia do banco de dados ao deploy.</p>
+    </div>
+    <div class="flex min-w-0 flex-[2_1_520px] flex-col gap-8">
+      {stack.map((g) => (
+        <div class="flex flex-col gap-3">
+          <span class="text-[13px] font-semibold tracking-[0.08em] text-accent uppercase">{g.grupo}</span>
+          <ul class="flex flex-wrap gap-2.5">
+            {g.itens.map((item) => (
+              <li class="rounded-full border border-line-strong px-[18px] py-2.5 font-mono text-sm">{item}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

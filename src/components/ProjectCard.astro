@@ -1,0 +1,64 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  projeto: CollectionEntry<'projects'>;
+  numero: number;
+  destaque?: boolean;
+}
+
+const { projeto, numero, destaque = false } = Astro.props;
+const { titulo, categoria, descricao, tags, imagem, demo, repo } = projeto.data;
+const href = `/projetos/${projeto.id}/`;
+const n = String(numero).padStart(2, '0');
+---
+
+{destaque ? (
+  <article class="flex flex-wrap items-center gap-10">
+    <a href={href} class="block min-w-0 flex-[1_1_480px]" aria-label={`Ver detalhes de ${titulo}`}>
+      <img
+        src={imagem ?? '/image.png'}
+        alt={`Captura de tela de ${titulo}`}
+        class="block w-full rounded-[20px] border border-line"
+        loading="lazy"
+      />
+    </a>
+    <div class="flex min-w-0 flex-[1_1_360px] flex-col gap-4">
+      <span class="text-sm font-semibold text-accent">{n} · {categoria}</span>
+      <h3 class="font-display text-[34px] leading-[1.15] font-semibold tracking-tight">
+        <a href={href} class="hover:text-accent">{titulo}</a>
+      </h3>
+      <p class="text-muted">{descricao}</p>
+      <ul class="flex flex-wrap gap-2" aria-label="Tecnologias">
+        {tags.map((tag) => (
+          <li class="rounded-full bg-surface-2 px-3.5 py-1.5 font-mono text-[13px]">{tag}</li>
+        ))}
+      </ul>
+      <div class="mt-2 flex flex-wrap gap-6 text-[15px] font-semibold">
+        <a href={href} class="border-b-[1.5px] border-ink py-2.5 hover:border-accent">Ver detalhes</a>
+        {demo && <a href={demo} target="_blank" rel="noopener" class="border-b-[1.5px] border-ink py-2.5 hover:border-accent">Projeto ao vivo</a>}
+        {repo && <a href={repo} target="_blank" rel="noopener" class="border-b-[1.5px] border-ink py-2.5 hover:border-accent">GitHub</a>}
+      </div>
+    </div>
+  </article>
+) : (
+  <article class="flex min-w-0 flex-[1_1_440px] flex-col gap-4">
+    <a href={href} class="block" aria-label={`Ver detalhes de ${titulo}`}>
+      <img
+        src={imagem ?? '/image.png'}
+        alt={`Captura de tela de ${titulo}`}
+        class="h-[280px] w-full rounded-[20px] border border-line object-cover"
+        loading="lazy"
+      />
+    </a>
+    <span class="text-sm font-semibold text-accent">{n} · {categoria}</span>
+    <h3 class="font-display text-[28px] leading-[1.2] font-semibold tracking-tight">
+      <a href={href} class="hover:text-accent">{titulo}</a>
+    </h3>
+    <p class="text-muted">{descricao}</p>
+    <a href={href} class="inline-flex items-center gap-2 py-2.5 text-[15px] font-semibold">
+      Ver detalhes
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+    </a>
+  </article>
+)}

@@ -1,0 +1,9 @@
+---
+import { site } from '../data/site';
+const ano = new Date().getFullYear();
+---
+
+<footer class="mx-auto flex max-w-[1180px] flex-wrap justify-between gap-3 px-8 pb-10 text-sm text-muted">
+  <span>© {ano} {site.nome}. Todos os direitos reservados.</span>
+  <a href="#topo" class="py-2 text-muted">Voltar ao topo ↑</a>
+</footer>

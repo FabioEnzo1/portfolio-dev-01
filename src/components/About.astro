@@ -1,0 +1,20 @@
+---
+import { site, sobre } from '../data/site';
+---
+
+<section id="sobre" class="mx-auto flex max-w-[1180px] flex-wrap items-center gap-14 px-8 py-30">
+  <div class="h-[440px] min-w-0 flex-[1_1_340px] overflow-hidden rounded-[20px] border border-line bg-surface">
+    <img
+      src="/foto-perfil.png"
+      alt="Minha foto"
+      class="h-full w-full object-cover object-[center_top]"
+    />
+  </div>
+  <div class="flex min-w-0 flex-[1_1_440px] flex-col gap-5">
+    <h2 class="font-display text-[40px] font-semibold tracking-tight">Sobre mim</h2>
+    {sobre.map((p) => <p class="text-muted">{p}</p>)}
+    <a href={site.curriculo} class="inline-flex self-start rounded-full border-[1.5px] border-line-strong px-6 py-3.5 text-[15px] font-semibold hover:border-accent">
+      Baixar currículo (PDF)
+    </a>
+  </div>
+</section>
