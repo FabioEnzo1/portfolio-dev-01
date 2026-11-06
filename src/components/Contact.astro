@@ -1,5 +1,7 @@
 ---
 import { site } from '../data/site';
+
+const emailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(site.email)}&su=${encodeURIComponent('Contato pelo portfólio')}&body=${encodeURIComponent('Olá, Fábio! Encontrei seu portfólio e gostaria de conversar com você.')}`;
 ---
 
 <section id="contato" class="mx-auto max-w-[1180px] px-8 pb-24">
@@ -9,7 +11,9 @@ import { site } from '../data/site';
     </h2>
     <p class="max-w-[520px] text-[19px]">Me conte sobre o seu projeto ou vaga. Respondo o mais rápido possível.</p>
     <a
-      href={`mailto:${site.email}`}
+      href={emailLink}
+      target="_blank"
+      rel="noopener noreferrer"
       class="inline-flex items-center gap-2.5 rounded-full bg-bg px-7 py-4 font-semibold text-ink hover:text-ink hover:brightness-125"
     >
       {site.email}
