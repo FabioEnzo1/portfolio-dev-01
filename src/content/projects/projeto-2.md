@@ -13,6 +13,7 @@ tags:
     "Vitest",
   ]
 ordem: 2
+imagem: "/foto-sampleAPI.png"
 ---
 
 ## Sobre o projeto

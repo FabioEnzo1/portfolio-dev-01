@@ -26,14 +26,40 @@ export const nav = [
 export const stack = [
   {
     grupo: "Front-end",
-    itens: ["React / Next.js", "TypeScript", "Tailwind CSS"],
+    itens: [
+      { nome: "React", icone: "react/react-original.svg" },
+      { nome: "Next.js", icone: "nextjs/nextjs-original.svg" },
+      { nome: "TypeScript", icone: "typescript/typescript-original.svg" },
+      { nome: "Tailwind CSS", icone: "tailwindcss/tailwindcss-original.svg" },
+    ],
   },
   {
     grupo: "Back-end",
-    itens: ["Node.js / Python / Java", "API REST", "Autenticação"],
+    itens: [
+      { nome: "Node.js", icone: "nodejs/nodejs-original.svg" },
+      { nome: "Python", icone: "python/python-original.svg" },
+      { nome: "Java", icone: "java/java-original.svg" },
+      { nome: "API REST" },
+      { nome: "Autenticação" },
+    ],
   },
-  { grupo: "Banco de dados", itens: ["PostgreSQL", "MongoDB", "Prisma / ORM"] },
-  { grupo: "DevOps e ferramentas", itens: ["Git / GitHub", "Docker", "CI/CD"] },
+  {
+    grupo: "Banco de dados",
+    itens: [
+      { nome: "PostgreSQL", icone: "postgresql/postgresql-original.svg" },
+      { nome: "MongoDB", icone: "mongodb/mongodb-original.svg" },
+      { nome: "Prisma / ORM", icone: "prisma/prisma-original.svg" },
+    ],
+  },
+  {
+    grupo: "DevOps e ferramentas",
+    itens: [
+      { nome: "Git", icone: "git/git-original.svg" },
+      { nome: "GitHub", icone: "github/github-original.svg" },
+      { nome: "Docker", icone: "docker/docker-original.svg" },
+      { nome: "CI/CD", icone: "githubactions/githubactions-original.svg" },
+    ],
+  },
 ];
 
 export const sobre = [
