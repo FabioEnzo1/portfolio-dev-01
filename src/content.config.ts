@@ -5,7 +5,7 @@ import { defineCollection } from "astro:content";
 // Cada arquivo .md em src/content/projects/ vira um projeto no site.
 const projects = defineCollection({
   loader: glob({
-    pattern: ["**/*.md", "!READMEFSW.md"],
+    pattern: ["**/*.md", "!READMEFSW.md", "!readmeProjeto3.md"],
     base: "./src/content/projects",
   }),
   schema: z.object({
